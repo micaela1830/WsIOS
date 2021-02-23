@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function escribirEnCaja(){
+                console.log("hasta aquí llego")
+                //manera clasica de acceder a un objeto del arbol DOM
+                //****var valor = document.getElementById("nombre");
+                //****var resultado = document.getElementById("resultado");
+                //el atributo "value" sirve para acceder al valor
+                resultado.value=nombre.value;
+                //desde las ultimas versiones JS nos creara una variable automaticamente con cada id que encuentra en la pagina
+                
+            }
+            function add(valor1, valor2){
+                //si la función tiene return devuleve, sino tiene return es como si fuese un void
+                return valor1 + " " + valor2;
+            }
+            function concatenarElementos(){
+
+                resultado.value = add(nombre.value, apellidos.value);
+            }
+            function cambiarColor(){
+                var colorRojo = Math.random() * (255);
+                var colorAzul = Math.random() * (255);
+                var colorVerde = Math.random() * (255);
+
+                resultado.style.backgroundColor = "rgb("+ colorRojo + ","+ colorVerde + "," + colorAzul +")";
+        }
+
+        </script>
+    </head>
+
+    <body>
+        <div style="text-align:center;">
+            Nombre: <input type="text" id="nombre"/>
+        <br/>
+        Apellidos: <input type="text" id="apellidos" placeholder="Apellido">
+        <br/>
+        <button id="procesar" onclick="escribirEnCaja()">Procesar</button>
+        <br/>
+        <button onclick="concatenarElementos()">Concatenar</button>
+        <br/>
+        <button onclick="cambiarColor()"> Cambiar Color Texto</button>
+        <br/>
+            Resultado:<input type="text" id="resultado"
+    </div>
+    </body>
+</html>
